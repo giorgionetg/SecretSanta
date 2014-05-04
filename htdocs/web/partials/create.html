@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="participant in participants">
+        {{participants.indexOf(participant)}}
+        <input ng-model="participant.name">
+        <input ng-model="participant.email">
+        <button class="btn btn-success" ng-show="$last" ng-click="addParticipant()">Add</button>
+        <button class="btn btn-success" ng-show="$last && participants.length > 3" ng-click="removeParticipant()">Remove</button>
+    </li>
+</ul>
