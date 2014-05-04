@@ -1,21 +1,54 @@
 var secretSantaControllers = angular.module('secretSantaControllers', []);
 
-secretSantaControllers.controller('CreateController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+/**
+ * ListCreateController
+ */
+secretSantaControllers.controller('ListCreateController', ['$scope', '$http', function ($scope, $http) {
 
-    $scope.participants = [
-        { "name": "", "email": "" },
-        { "name": "", "email": "" },
-        { "name": "", "email": "" }
-    ]
+    $scope.list = {
+        message: "",
+        participants: [
+            { "name": "", "email": "" },
+            { "name": "", "email": "" },
+            { "name": "", "email": "" }
+        ]
+    }
 
 
     $scope.addParticipant = function () {
-        $scope.participants.push({name: '', email: ''});
+        $scope.list.participants.push({name: '', email: ''});
     };
 
     $scope.removeParticipant = function () {
-        $scope.participants.pop();
+        $scope.list.participants.pop();
     };
 
+}]);
+
+
+/**
+ * ListManageController
+ */
+secretSantaControllers.controller('ListManageController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams, $location) {
+    $http
+        .get('list/' + $routeParams.listId + '.json')
+        .success(function (data) {
+        })
+        .error(function () {
+            $location.path('/create')
+        });
+}]);
+
+/**
+ * EntryDetailController
+ */
+secretSantaControllers.controller('EntryDetailController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams, $location) {
+    $http
+        .get('entry/' + $routeParams.entryId + '.json')
+        .success(function (data) {
+        })
+        .error(function () {
+            $location.path('/create')
+        });
 }]);
 
