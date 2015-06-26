@@ -14,16 +14,16 @@ base:
 pool:
     header:
         steps:
-            title: Your gift exchange event <br/>in <span class="accent">3 easy steps</span>
+            title: Il tuo evento di Sscambio Regali <br/>in <span class="accent">3 facili passaggi</span>
             list:
-                one: List your participants
-                two: Add a personal message
-                three: Send!
-            get_started: Get Started!
+                one: Invita i partecipanti
+                two: Aggiungi un messaggio
+                three: Invia!
+            get_started: Inizia!
 
 create:
     what_is:
-        title: What is Secret Santa?
+        title: Cos'è Secret Santa?
         intro: >
                 <p>It’s a <strong>free</strong> online Secret Santa <strong>gift exchange organizer</strong>! Organize a Secret
                 Santa party with friends, family or even co-workers. After receiving the Secret Santa mail you can add your
